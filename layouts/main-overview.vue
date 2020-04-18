@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-overview-container">
     <Header/>
     <nuxt />
   </div>
@@ -30,6 +30,10 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
+
+/* .main-overview-container {
+  background-color: #f3f7fd !important;
+} */
 
 *,
 *:before,

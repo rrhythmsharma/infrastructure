@@ -2,8 +2,12 @@
     <div class="login-container-wrapper"><img src="../assets/autocode_color.png" width="150" height="100" alt="">
         <p class="login-description-text">Sign in for the full experience</p>
         <div class="login-button-container">
-            <div class="google-login-button" @click="googleSignUp"><img src="../assets/google.svg" width="20" height="20" alt="">
-                <div class="login-text">Connect With Google</div>
+            <div class="google-login-button" @click="googleSignUp">
+              <img src="../assets/google.svg" width="20" height="20" alt="">
+              <div class="login-text">Connect With Google</div>
+              <div v-if="showSpinner" class="spinner-border" role="status">
+                <span class="sr-only"></span>
+              </div>
             </div>
         </div>
     </div>
@@ -14,14 +18,21 @@ import { mapActions } from 'vuex'
 import firebaseApp, {firebaseAuth, googleProvider} from '@/services/fireinit.js'
 
 export default {
-    layout: 'login-theme',
+    layout: 'minimal',
 
     middleware: ['login-middleware'],
+
+    data() {
+      return {
+        showSpinner: false
+      }
+    },
 
     methods: {
       ...mapActions('modules/user', [ 'login' ]),
         
         async googleSignUp () {
+          this.showSpinner = true
           const { user } = await firebaseAuth.signInWithPopup(googleProvider)
           await this.login(user)
           this.$router.push('/infrastructure')
@@ -32,6 +43,28 @@ export default {
 
 
 <style scoped>
+
+.spinner-border{
+  width: 20px !important;
+  height: 20px !important;
+  border-top-color: currentcolor !important;
+  border-top-style: solid !important;
+  border-top-width: 0.15em !important;
+  border-right-color: transparent !important;
+  border-right-style: solid !important;
+  border-right-width: 0.15em !important;
+  border-bottom-color: currentcolor !important;
+  border-bottom-style: solid !important;
+  border-bottom-width: 0.15em !important;
+  border-left-color: currentcolor !important;
+  border-left-style: solid !important;
+  border-left-width: 0.15em !important;
+  border-image-source: initial !important;
+  border-image-slice: initial !important;
+  border-image-width: initial !important;
+  border-image-outset: initial !important;
+  border-image-repeat: initial !important;
+}
 
 .lnd_button_4 {
   display: -webkit-box;
