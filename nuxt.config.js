@@ -1,9 +1,12 @@
+const env = require('dotenv').config();
 
 export default {
   mode: 'universal',
   /*
   ** Headers of the page
   */
+ env: env.parsed,
+
   head: {
     title: process.env.npm_package_name || '',
     meta: [
