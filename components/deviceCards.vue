@@ -91,7 +91,7 @@ export default {
         return {
             imgProp: { width: 100, height: 100},
             imgUrl: "",
-            fanUrl: require('../assets/fan.svg'),
+            fanUrl: require('../assets/Fan.svg'),
             tubelightUrl: require('../assets/Tubelight.svg'),
             socketUrl: require('../assets/Socket.svg'),
             airConditionerUrl: require('../assets/AirConditioner.svg'),
