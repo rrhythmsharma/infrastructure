@@ -175,43 +175,18 @@ export default {
     stroke-dashoffset: 0;
   }
 }
-.animate .anim-first {
+.animate .anim-third {
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
 }
-.animate .anim-first .icon {
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-}
-.animate .anim-second::before {
-  -webkit-transition-delay: 1s !important;
-          transition-delay: 1s !important;
-}
-.animate .anim-third {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-}
 .animate .anim-third .icon {
-  -webkit-transition-delay: 2s;
-          transition-delay: 2s;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
 }
 .animate .anim-fourth::before {
-  -webkit-transition-delay: 3s !important;
-          transition-delay: 3s !important;
+  -webkit-transition-delay: 2s !important;
+          transition-delay: 2s !important;
 }
-.animate .anim-fifth {
-  -webkit-animation-delay: 4s !important;
-          animation-delay: 4s !important;
-}
-.animate .anim-6th::before {
-  -webkit-transition-delay: 4.4s !important;
-          transition-delay: 4.4s !important;
-}
-.animate .anim-7th {
-  -webkit-animation-delay: 4.9s !important;
-          animation-delay: 4.9s !important;
-}
-
 .icon {
   display: block;
   width: 100%;

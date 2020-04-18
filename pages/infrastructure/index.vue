@@ -1,7 +1,23 @@
 <template>
     <div>
       <h3 class="infra-heading mt-3 mb-5"><span>Infrastructure</span></h3>
-      <infra-cards/>
+      <div v-if="$fetchState.pending" class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <p v-else-if="$fetchState.error">Error while fetching infrastructure details: {{ $fetchState.error.message }}</p>
+      <div v-else>
+          <infra-cards
+            v-for="infra in infrastructures"
+            :key="infra.infrastructure_id"
+            :deviceId="infra.infrastructure_id"
+            :name="infra.infrastructure_name"
+            :type="infra.infrastructure_type"
+            :fileSize="infra.infrastructure_file_size"
+            :admin="infra.is_admin"
+          />
+      </div>
     </div>
 </template>
 <script>
@@ -15,6 +31,18 @@ export default {
 
     components: {
       infraCards
+    },
+
+    data () {
+      return {
+        infrastructures: {}
+      }
+    },
+
+    async fetch () {
+      this.infrastructures = await fetch(`https://test.bettad.xyz/infrastructures`)
+                              .then((res) => res.json())
+      this.infrastructures = this.infrastructures.response
     }
 }
 </script>

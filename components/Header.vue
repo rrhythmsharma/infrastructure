@@ -12,6 +12,7 @@
                     <template v-slot:button-content>
                         <img class="d-inline-block align-top rounded-circle" rounded="circle" :src="user.avatar" alt="alternative" width="50">
                     </template>
+                    <b-dropdown-item href="#">Hello {{user.name}} !</b-dropdown-item>
                     <b-dropdown-item href="#" @click="signOut">Sign Out</b-dropdown-item>
                 </b-nav-item-dropdown>
             </b-navbar-nav>
