@@ -58,7 +58,6 @@ export default {
             this.devices = await fetch(`https://test.bettad.xyz/infrastructures/1/devices`)
                                 .then((res) => res.json())
             this.devices = this.devices.response
-            console.log("this.devices:", this.devices)
         }, 30000);
     },
 
@@ -66,7 +65,6 @@ export default {
         this.devices = await fetch(`https://test.bettad.xyz/infrastructures/1/devices`)
                             .then((res) => res.json())
         this.devices = this.devices.response
-        console.log("this.devices:", this.devices)
     },
 
     destroyed() {

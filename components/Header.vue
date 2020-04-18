@@ -28,10 +28,6 @@ import firebaseApp, {firebaseAuth, googleProvider} from '~/services/fireinit.js'
 export default {
     name: "Header",
 
-    mounted() {
-        console.log("Header-component")
-    },
-
     computed: {
         ...mapGetters('modules/user', [
             'uid',
