@@ -72,8 +72,6 @@ export default {
     destroyed() {
         clearTimeout(this.interval);
     }
-
-
 }
 </script>
 

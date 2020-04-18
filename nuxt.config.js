@@ -44,6 +44,9 @@ export default {
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
   ],
+  generate: {
+    fallback: true
+  },
   /*
   ** Build configuration
   */
