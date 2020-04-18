@@ -19,5 +19,7 @@
     "jwt-decode": "^2.2.0",
     "nuxt": "^2.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0"
+  }
 }
