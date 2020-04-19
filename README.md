@@ -1,6 +1,6 @@
-# cloudworx
+# Home Infrastructure - Web Application
 
-> My phenomenal Nuxt.js project
+## It is live hosted on https://zealous-kilby-842c41.netlify.app/
 
 ## Build Setup
 
