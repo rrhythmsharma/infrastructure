@@ -5,8 +5,15 @@ export default {
   /*
   ** Headers of the page
   */
- env: env.parsed,
-
+  env: {
+    API_KEY:             process.env.API_KEY,
+    AUTH_DOMAIN:         process.env.AUTH_DOMAIN,
+    DB_URL:              process.env.DB_URL,
+    PROJECT_ID:          process.env.PROJECT_ID,
+    STORAGE_BUCKET:      process.env.STORAGE_BUCKET,
+    MESSAGING_SENDER_ID: process.env.MESSAGING_SENDER_ID,
+    APP_ID:              process.env.APP_ID
+  },
   head: {
     title: process.env.npm_package_name || '',
     meta: [
